@@ -76,18 +76,19 @@ struct BasicButton: View {
 }
 
 struct PlayPauseButton: View {
-    @State var isPlaying = true
+
+    @State var isPlaying = false
 
     var body: some View {
         Button(action: {
-            // TODO: - Add later
+            self.isPlaying.toggle()
         }) {
             ZStack {
                 Circle()
-                    .fill(LinearGradient(gradient: Gradient(colors: [.pauseLightOrange, .pauseDarkOrange]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .fill(LinearGradient(gradient: Gradient(colors: colorsForIsPlaying()), startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
                 Circle()
-                .fill(LinearGradient(gradient: Gradient(colors: [.pauseLightOrange, .pauseDarkOrange]), startPoint: .bottomTrailing, endPoint: .topLeading)
+                .fill(LinearGradient(gradient: Gradient(colors: colorsForIsPlaying()), startPoint: .bottomTrailing, endPoint: .topLeading)
                 )
                     .padding(5)
 
@@ -97,7 +98,12 @@ struct PlayPauseButton: View {
             }
         }
     }
+
     func colorsForIsPlaying() -> [Color] {
-        
+        if isPlaying {
+            return [.pauseLightOrange, .pauseDarkOrange]
+        } else {
+            return [.playLightGreen, .playDarkGreen]
+        }
     }
 }
