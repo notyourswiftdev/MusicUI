@@ -58,8 +58,15 @@ struct ContentView: View {
 
                     Spacer()
 
-                    PlayPauseButton()
-                    .frame(width: 100, height: 100)
+                    HStack {
+                        ReverseButton(imageName: "forward.fill")
+                            .padding(.trailing, 15)
+                        PlayPauseButton()
+                        .frame(width: 100, height: 100)
+                        ForwardButton(imageName: "forward.fill")
+                            .padding(.leading, 15)
+                    }
+
                 }
             }
         }
@@ -156,6 +163,55 @@ struct CoverArtView: View {
 }
 
 struct BasicButton: View {
+    var imageName: String
+
+    var body: some View {
+        Button(action: {
+            // TODO: - Add the back navigation later
+        }) {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.buttonColor)
+                .frame(width: 20, height: 20)
+                .padding(24)
+                .background(LinearGradient(gradient: Gradient(colors: [.bgGradientTop,
+                                                                       .bgGradientBottom]),
+                                           startPoint: .topLeading,
+                                           endPoint: .bottomTrailing))
+                .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 5, y: 5)
+                .shadow(color: Color.white.opacity(0.1), radius: 10, x: -5, y: -5)
+        }
+    }
+}
+
+struct ReverseButton: View {
+    var imageName: String
+
+    var body: some View {
+        Button(action: {
+            // TODO: - Add the back navigation later
+        }) {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .rotationEffect(.degrees(-180))
+                .foregroundColor(.buttonColor)
+                .frame(width: 20, height: 20)
+                .padding(24)
+                .background(LinearGradient(gradient: Gradient(colors: [.bgGradientTop,
+                                                                       .bgGradientBottom]),
+                                           startPoint: .topLeading,
+                                           endPoint: .bottomTrailing))
+                .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 5, y: 5)
+                .shadow(color: Color.white.opacity(0.1), radius: 10, x: -5, y: -5)
+        }
+    }
+}
+
+struct ForwardButton: View {
     var imageName: String
 
     var body: some View {
