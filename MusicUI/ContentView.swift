@@ -17,7 +17,7 @@ class Song: ObservableObject {
 }
 
 struct ContentView: View {
-
+    
     @ObservedObject var song = Song()
 
     var body: some View {
@@ -31,14 +31,14 @@ struct ContentView: View {
                 // This will hold every view on top of the background gradient
                 VStack {
                     HStack {
-                        BasicButton(imageName: "arrow.left")
+                        BackButton(imageName: "arrow.left")
                             .padding(.leading, 30)
                         Spacer()
                         Text("PLAYING NOW")
                             .foregroundColor(.buttonColor)
                             .font(Font.system(.headline).smallCaps())
                         Spacer()
-                        BasicButton(imageName: "line.horizontal.3")
+                        MenuButton(imageName: "line.horizontal.3")
                             .padding(.trailing, 30)
                     }
                     CoverArtView(size: geometry.size.width * 0.85)
@@ -162,7 +162,7 @@ struct CoverArtView: View {
     }
 }
 
-struct BasicButton: View {
+struct MenuButton: View {
     var imageName: String
 
     var body: some View {
@@ -186,12 +186,42 @@ struct BasicButton: View {
     }
 }
 
-struct ReverseButton: View {
+struct BackButton: View {
+    
+    @State var searchView: Bool = false
     var imageName: String
 
     var body: some View {
         Button(action: {
             // TODO: - Add the back navigation later
+            self.searchView = true
+        }) {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.buttonColor)
+                .frame(width: 20, height: 20)
+                .padding(24)
+                .background(LinearGradient(gradient: Gradient(colors: [.bgGradientTop,
+                                                                       .bgGradientBottom]),
+                                           startPoint: .topLeading,
+                                           endPoint: .bottomTrailing))
+                .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.3), radius: 10, x: 5, y: 5)
+                .shadow(color: Color.white.opacity(0.1), radius: 10, x: -5, y: -5)
+        }
+        .fullScreenCover(isPresented: $searchView, onDismiss: nil) {
+            SearchView()
+        }
+    }
+}
+
+struct ReverseButton: View {
+    var imageName: String
+
+    var body: some View {
+        Button(action: {
+            // TODO: - Add the reverse navigation later
         }) {
             Image(systemName: imageName)
                 .resizable()

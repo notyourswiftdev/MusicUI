@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A267E0D24B837950032EFEE /* MusicUI-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A267E0C24B837950032EFEE /* MusicUI-Bridging-Header.m */; };
 		1A976D192432D8CA00FE27AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A976D182432D8CA00FE27AF /* AppDelegate.swift */; };
 		1A976D1B2432D8CA00FE27AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A976D1A2432D8CA00FE27AF /* SceneDelegate.swift */; };
 		1A976D1D2432D8CA00FE27AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A976D1C2432D8CA00FE27AF /* ContentView.swift */; };
@@ -14,9 +15,13 @@
 		1A976D222432D8CB00FE27AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A976D212432D8CB00FE27AF /* Preview Assets.xcassets */; };
 		1A976D252432D8CB00FE27AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A976D232432D8CB00FE27AF /* LaunchScreen.storyboard */; };
 		1A976D2D243309FB00FE27AF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A976D2C243309FB00FE27AF /* Colors.swift */; };
+		1AFA2C2024B819A6009BF07F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA2C1F24B819A6009BF07F /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A267E0624B834BC0032EFEE /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotifyiOS.framework; path = "../ios-sdk-1.2.2/SpotifyiOS.framework"; sourceTree = "<group>"; };
+		1A267E0B24B837940032EFEE /* MusicUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicUI-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A267E0C24B837950032EFEE /* MusicUI-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MusicUI-Bridging-Header.m"; sourceTree = "<group>"; };
 		1A976D152432D8CA00FE27AF /* MusicUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A976D182432D8CA00FE27AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A976D1A2432D8CA00FE27AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		1A976D242432D8CB00FE27AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A976D262432D8CB00FE27AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A976D2C243309FB00FE27AF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1AFA2C1F24B819A6009BF07F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,11 +45,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A267E0524B834BC0032EFEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A267E0624B834BC0032EFEE /* SpotifyiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A267E0E24B837D10032EFEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A976D182432D8CA00FE27AF /* AppDelegate.swift */,
+				1A976D1A2432D8CA00FE27AF /* SceneDelegate.swift */,
+				1A976D1E2432D8CB00FE27AF /* Assets.xcassets */,
+				1A976D232432D8CB00FE27AF /* LaunchScreen.storyboard */,
+				1A976D262432D8CB00FE27AF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1A976D0C2432D8CA00FE27AF = {
 			isa = PBXGroup;
 			children = (
 				1A976D172432D8CA00FE27AF /* MusicUI */,
 				1A976D162432D8CA00FE27AF /* Products */,
+				1A267E0524B834BC0032EFEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +85,13 @@
 		1A976D172432D8CA00FE27AF /* MusicUI */ = {
 			isa = PBXGroup;
 			children = (
-				1A976D182432D8CA00FE27AF /* AppDelegate.swift */,
-				1A976D1A2432D8CA00FE27AF /* SceneDelegate.swift */,
+				1A267E0E24B837D10032EFEE /* Resources */,
+				1AFA2C1F24B819A6009BF07F /* SearchView.swift */,
 				1A976D1C2432D8CA00FE27AF /* ContentView.swift */,
 				1A976D2C243309FB00FE27AF /* Colors.swift */,
-				1A976D1E2432D8CB00FE27AF /* Assets.xcassets */,
-				1A976D232432D8CB00FE27AF /* LaunchScreen.storyboard */,
-				1A976D262432D8CB00FE27AF /* Info.plist */,
 				1A976D202432D8CB00FE27AF /* Preview Content */,
+				1A267E0C24B837950032EFEE /* MusicUI-Bridging-Header.m */,
+				1A267E0B24B837940032EFEE /* MusicUI-Bridging-Header.h */,
 			);
 			path = MusicUI;
 			sourceTree = "<group>";
@@ -110,6 +136,7 @@
 				TargetAttributes = {
 					1A976D142432D8CA00FE27AF = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -149,6 +176,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A267E0D24B837950032EFEE /* MusicUI-Bridging-Header.m in Sources */,
+				1AFA2C2024B819A6009BF07F /* SearchView.swift in Sources */,
 				1A976D192432D8CA00FE27AF /* AppDelegate.swift in Sources */,
 				1A976D2D243309FB00FE27AF /* Colors.swift in Sources */,
 				1A976D1B2432D8CA00FE27AF /* SceneDelegate.swift in Sources */,
@@ -288,17 +317,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4A2JWWKQ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MusicUI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MusicUI/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.MusicUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicUI/MusicUI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -308,17 +340,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 7G4A2JWWKQ;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MusicUI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MusicUI/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AaronCleveland.MusicUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicUI/MusicUI-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
